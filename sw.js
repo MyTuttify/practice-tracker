@@ -1,6 +1,6 @@
 // Service worker van de beveiligde webversie: maakt de app offline beschikbaar.
 // Bevat alleen versleutelde inhoud; doet geen verzoeken naar andere servers.
-const CACHE = 'practice-tracker-85a35465244c';
+const CACHE = 'practice-tracker-0ebf7bac00ff';
 const FILES = ['./', './index.html', './manifest.webmanifest', './pwa-192.png', './pwa-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (event) => {
