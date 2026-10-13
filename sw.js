@@ -1,6 +1,6 @@
 // Service worker van de beveiligde webversie: maakt de app offline beschikbaar.
 // Bevat alleen versleutelde inhoud; doet geen verzoeken naar andere servers.
-const CACHE = 'practice-tracker-f626cf89de8d';
+const CACHE = 'practice-tracker-fcd122382b39';
 const FILES = ['./', './index.html', './manifest.webmanifest', './pwa-192.png', './pwa-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (event) => {
@@ -16,11 +16,20 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+// Alleen de app zelf ('./' of './index.html' binnen de scope) komt uit de cache. Andere pagina's
+// op dezelfde site (privacy.html, support.html) gaan rechtstreeks naar het netwerk: anders zou
+// hun antwoord de offline kopie van de app in de cache overschrijven.
+function isAppNavigation(url) {
+  const scope = new URL(self.registration.scope);
+  return url.origin === scope.origin && (url.pathname === scope.pathname || url.pathname === `${scope.pathname}index.html`);
+}
+
 self.addEventListener('fetch', (event) => {
   const req = event.request;
   const url = new URL(req.url);
   if (req.method !== 'GET' || url.origin !== self.location.origin) return;
   if (req.mode === 'navigate') {
+    if (!isAppNavigation(url)) return; // gewoon via het netwerk, niets cachen
     // Eerst netwerk (voor updates), maar nooit langer dan 3 s wachten als er een kopie in de
     // cache staat (wifi zonder werkend internet). Het netwerkantwoord werkt de cache daarna bij.
     const network = fetch(req).then((res) => {
