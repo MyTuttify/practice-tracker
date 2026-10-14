@@ -1,4 +1,4 @@
-# Practice Tracker
+# Tuttify
 
 Versleutelde webversie van een persoonlijke oefen-app. Openen vereist een toegangscode.
 

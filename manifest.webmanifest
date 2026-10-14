@@ -1,6 +1,6 @@
 {
-  "name": "Practice Tracker",
-  "short_name": "Practice",
+  "name": "Tuttify",
+  "short_name": "Tuttify",
   "description": "Offline oefentracker voor muzikanten",
   "lang": "nl",
   "start_url": "./",

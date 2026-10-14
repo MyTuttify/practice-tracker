@@ -1,6 +1,8 @@
 // Service worker van de beveiligde webversie: maakt de app offline beschikbaar.
 // Bevat alleen versleutelde inhoud; doet geen verzoeken naar andere servers.
-const CACHE = 'practice-tracker-1331d3e9ae8a';
+// Voorvoegsel van de cachenaam blijft 'practice-tracker-' (naam van vóór de hernoeming naar Tuttify):
+// bij het activeren worden zo ook de caches van oudere versies opgeruimd (zie hieronder).
+const CACHE = 'practice-tracker-fabe7c2671ea';
 const FILES = ['./', './index.html', './manifest.webmanifest', './pwa-192.png', './pwa-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (event) => {
