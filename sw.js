@@ -2,8 +2,8 @@
 // Bevat alleen versleutelde inhoud; doet geen verzoeken naar andere servers.
 // Voorvoegsel van de cachenaam blijft 'practice-tracker-' (naam van vóór de hernoeming naar Tuttify):
 // bij het activeren worden zo ook de caches van oudere versies opgeruimd (zie hieronder).
-const CACHE = 'practice-tracker-fabe7c2671ea';
-const FILES = ['./', './index.html', './manifest.webmanifest', './pwa-192.png', './pwa-512.png', './apple-touch-icon.png'];
+const CACHE = 'practice-tracker-42007b093619';
+const FILES = ['./', './index.html', './manifest.webmanifest', './pwa-192.png', './pwa-512.png', './pwa-maskable-512.png', './apple-touch-icon.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)).then(() => self.skipWaiting()));
