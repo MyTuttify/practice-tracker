@@ -1,0 +1,116 @@
+{
+  "format": "tuttify-speech-pack",
+  "version": 1,
+  "model": "whisper-base-i8",
+  "ort": "1.30.0",
+  "totalBytes": 97516943,
+  "files": {
+    "wasm": {
+      "name": "ort-wasm-simd-threaded.wasm",
+      "size": 14239897,
+      "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2",
+      "parts": [
+        {
+          "path": "ort-wasm-simd-threaded.wasm",
+          "size": 14239897,
+          "sha256": "3398c10d07d229bd91b364548e130e0e51a8e5704b88c7c083ebbeb78842dee2"
+        }
+      ]
+    },
+    "encoder": {
+      "name": "whisper-base-i8-encoder.onnx",
+      "size": 29078976,
+      "sha256": "375fe4d0baf4b23ea29e1f1ffd8d9170e617e90a8a404fbe80aa61d5a95ab9b3",
+      "parts": [
+        {
+          "path": "whisper-base-i8-encoder.onnx.part0",
+          "size": 14539488,
+          "sha256": "8e5947022b7379ddb7944acbdba95d37ebdacdc244aff7ac32ba6bc8db7d9684"
+        },
+        {
+          "path": "whisper-base-i8-encoder.onnx.part1",
+          "size": 14539488,
+          "sha256": "7535834e1019488dd9dcfc9b785894f9b48784d81d4694e220b9e659e82e0545"
+        }
+      ]
+    },
+    "decoder": {
+      "name": "whisper-base-i8-decoder.onnx",
+      "size": 51053816,
+      "sha256": "341c6803824497e3f4f4949ba0a3a7b61a1243078e7dda60bf2bc1d2d4781bb9",
+      "parts": [
+        {
+          "path": "whisper-base-i8-decoder.onnx.part0",
+          "size": 17017939,
+          "sha256": "480eed37c7114d9b66efb3ae3c84b92c373f045587ba8f378ad19063a3ee7391"
+        },
+        {
+          "path": "whisper-base-i8-decoder.onnx.part1",
+          "size": 17017939,
+          "sha256": "4c06b5c7b6dc57d518bc27d87fda6a616ce3a98ef39b91d8846e61d6ab41f8a4"
+        },
+        {
+          "path": "whisper-base-i8-decoder.onnx.part2",
+          "size": 17017938,
+          "sha256": "845c188f9fb895e49494078e2a67b9d158589602ff93b5353243a291ae92d061"
+        }
+      ]
+    },
+    "tokens": {
+      "name": "whisper-base-tokens.txt",
+      "size": 816730,
+      "sha256": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126",
+      "parts": [
+        {
+          "path": "whisper-base-tokens.txt",
+          "size": 816730,
+          "sha256": "b34b360dbb493e781e479794586d661700670d65564001f23024971d1f2fa126"
+        }
+      ]
+    },
+    "vad": {
+      "name": "silero-vad.onnx",
+      "size": 2327524,
+      "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3",
+      "parts": [
+        {
+          "path": "silero-vad.onnx",
+          "size": 2327524,
+          "sha256": "1a153a22f4509e292a94e67d6f9b85e8deb25b4988682b7e174c65279d8788e3"
+        }
+      ]
+    }
+  },
+  "licenses": [
+    {
+      "path": "LICENSE-whisper.txt",
+      "size": 1063,
+      "sha256": "b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d"
+    },
+    {
+      "path": "LICENSE-sherpa-onnx.txt",
+      "size": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "LICENSE-silero-vad.txt",
+      "size": 1075,
+      "sha256": "2e63e9a38b6e8fc0c7bc37ce174caca1862870856c6daf5697cfb785e925520b"
+    },
+    {
+      "path": "LICENSE-onnxruntime.txt",
+      "size": 1073,
+      "sha256": "2f07c72751aed99790b8a4869cf2311df85a860b22ded05fa22803587a48922c"
+    },
+    {
+      "path": "ThirdPartyNotices-onnxruntime.txt",
+      "size": 338088,
+      "sha256": "143764b952fdb1a7c69ce653bfba74a7744d6a8a573bfb73e235fba356c83de3"
+    },
+    {
+      "path": "NOTICE.txt",
+      "size": 2722,
+      "sha256": "178f21c60f214d3b348c927b7a4d76be0c66db507b64587e26512cc8b57b0b1a"
+    }
+  ]
+}

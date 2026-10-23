@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-kBQig1NGnKHjOrgIYDMxiGqk6j5gY/bn0V08934oszA=' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' data: blob:; worker-src 'self' blob:; manifest-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+    <link rel="icon" type="image/svg+xml" href="/practice-tracker/favicon.svg" />
+    <link rel="apple-touch-icon" href="/practice-tracker/apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="Offline oefentracker voor muziekstudie: sessies, metronoom, stemapparaat, agenda en statistieken." />
+    <title>Tuttify</title>
+    <script>
+      // Thema van de eerste tekening, nog vóór de app laadt: licht (de standaard, Wit) of donker bij een
+      // onthouden donkere keuze (pt-appearance, zie src/features/appearance/appearance.ts). De lichte
+      // achtergronden staan hieronder; appearance.test.ts controleert dat die lijst klopt.
+      (function () {
+        try {
+          var a = JSON.parse(localStorage.getItem('pt-appearance') || 'null');
+          if (a && ['white', 'hearts', 'paper', 'waves', 'dots'].indexOf(a.background) < 0) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0b0f17');
+          }
+        } catch (e) {
+          /* geen opslag: licht */
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/practice-tracker/assets/index-C9wEAz85.js"></script>
+    <link rel="stylesheet" crossorigin href="/practice-tracker/assets/index-Ddd5ymcI.css">
+    <meta name="robots" content="noindex" />
+  <link rel="manifest" href="/practice-tracker/manifest.webmanifest"></head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p lang="nl">Deze app vereist JavaScript.</p>
+      <p lang="en">This app requires JavaScript.</p>
+      <p lang="fr">Cette application nécessite JavaScript.</p>
+      <p lang="de">Diese App benötigt JavaScript.</p>
+      <p lang="es">Esta app requiere JavaScript.</p>
+      <p lang="pt">Esta app requer JavaScript.</p>
+    </noscript>
+  </body>
+</html>

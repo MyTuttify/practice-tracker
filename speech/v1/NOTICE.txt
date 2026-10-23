@@ -1,0 +1,36 @@
+Tuttify speech pack v1 (speech/v1/)
+===================================
+
+This folder contains no scripts or web pages: model data and the unmodified ONNX Runtime WebAssembly module
+(compiled program code, item 4), each verified by the app against a SHA-256 pinned in the app before use. The
+Tuttify web app downloads these files only after the user agrees, stores them on the device and uses them there
+to transcribe the user's own recordings. The app sends no audio or text anywhere. manifest.json lists the size
+and SHA-256 of every file and part. Files larger than 25 MB are split into equal parts (.part0, .part1, ...);
+joined in order they give the original file.
+
+1. whisper-base-i8-encoder.onnx (whisper-base-i8-encoder.onnx.part0, whisper-base-i8-encoder.onnx.part1)
+   whisper-base-i8-decoder.onnx (whisper-base-i8-decoder.onnx.part0, whisper-base-i8-decoder.onnx.part1, whisper-base-i8-decoder.onnx.part2)
+   Speech recognition model "Whisper base" by OpenAI. Model weights: MIT License, Copyright (c) 2022 OpenAI
+   (LICENSE-whisper.txt). ONNX export by the sherpa-onnx project (k2-fsa), Apache License 2.0
+   (LICENSE-sherpa-onnx.txt), from https://github.com/k2-fsa/sherpa-onnx/releases/download/asr-models/sherpa-onnx-whisper-base.tar.bz2
+   (sha256 911b2083efd7c0dca2ac3b358b75222660dc09fb716d64fbfc417ba6c99ff3de).
+
+   MODIFIED FILES: these two files were changed by Tuttify (scripts/speech/optimize.py, a graph rewrite with
+   the onnx Python package): the cross-attention keys/values are computed in the encoder instead of in every
+   decoder step, the self-attention cache length is dynamic, and the token embedding is stored once as an
+   int8 tensor with a scale per token. The originals are base-encoder.int8.onnx
+   (sha256 0b8fb1304b6109976038efff5ace81720e00386f3ff6b54ee8c75291ca0a1e11) and
+   base-decoder.int8.onnx (sha256 9759d217388a01b3a4c7c15533201067b48ae819c4daafc8624e64b9409dc02d)
+   from the archive above. The computations are otherwise unchanged.
+
+2. whisper-base-tokens.txt
+   Whisper vocabulary (MIT License, OpenAI), unchanged copy of base-tokens.txt from the same archive.
+
+3. silero-vad.onnx
+   Silero VAD v6.2 voice activity detector, MIT License, Copyright (c) 2020-present Silero Team
+   (LICENSE-silero-vad.txt), unchanged, from https://raw.githubusercontent.com/snakers4/silero-vad/be95df9152c0d7618fa1edfeb296fc3dae32376f/src/silero_vad/data/silero_vad.onnx
+
+4. ort-wasm-simd-threaded.wasm
+   ONNX Runtime Web 1.30.0, MIT License, Copyright (c) Microsoft Corporation (LICENSE-onnxruntime.txt),
+   unchanged, from the npm package onnxruntime-web@1.30.0. Third-party components inside it:
+   ThirdPartyNotices-onnxruntime.txt (from the onnxruntime repository, tag v1.30.0).
