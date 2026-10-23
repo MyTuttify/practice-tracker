@@ -10,4 +10,4 @@ bestanden). De app heeft geen account en geen server: alle gegevens blijven op h
 Onderdelen van derden (zoals het spraakpakket in `speech/`) vallen onder hun eigen licenties: zie de
 licentiebestanden daar en *Over Tuttify → Licenties* in de app.
 
-© Tuttify. Alle rechten voorbehouden.
+© 2026 MyTuttify. All rights reserved. Alle rechten voorbehouden. Zie [LICENSE](LICENSE).
