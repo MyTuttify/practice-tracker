@@ -1,0 +1,1 @@
+import{j as t,b2 as a,Y as n,e4 as e}from"./index-S8F2szY9.js";function s(){return t.jsx(a,{title:e("notFound"),children:t.jsx(n,{to:"/",className:"text-accent underline",children:e("backToDashboard")})})}export{s as default};
