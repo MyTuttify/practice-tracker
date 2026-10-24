@@ -1,1 +1,0 @@
-import{j as t,b2 as a,Y as n,en as e}from"./index-YB2F2Ur2.js";function s(){return t.jsx(a,{title:e("notFound"),children:t.jsx(n,{to:"/",className:"text-accent underline",children:e("backToDashboard")})})}export{s as default};
